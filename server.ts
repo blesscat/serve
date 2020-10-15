@@ -11,7 +11,7 @@ const path = Deno.args[0].replace(/^(\.\/|\/)/, '')
 const app = new Application()
 
 app.use(async (context) => {
-  context.response.headers.set("X-Response-Time", `testtime`);
+  context.response.headers.set("Access-Control-Allow-Origin", '*');
   await context.send({
     root: `${Deno.cwd()}/${path}`,
     index: 'index.html'
